@@ -24,7 +24,7 @@
 
         private static void Prepared(GatewayConfig config)
         {
-
+            //
             _listener = new GatewayTcpListener();
             _listener.ListenPort(config.ServerTcpPort, config.ClientTcpPort);
 
