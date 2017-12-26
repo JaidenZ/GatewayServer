@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D6033F7-CAB2-4495-A9C7-2E2229F9322A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GatewayServer.Air</RootNamespace>
+    <AssemblyName>GatewayServer.Air</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AirApplication.cs" />
+    <Compile Include="Configuration\INIDocument.cs" />
+    <Compile Include="Configuration\INIKey.cs" />
+    <Compile Include="Configuration\INIKeyCollection.cs" />
+    <Compile Include="Configuration\INISection.cs" />
+    <Compile Include="Configuration\INISectionCollection.cs" />
+    <Compile Include="Configuration\NativeMethods.cs" />
+    <Compile Include="GatewayCommunication.cs" />
+    <Compile Include="Model\ClientPackets\ClientPacketHeader.cs" />
+    <Compile Include="Model\ClientPackets\ClientPacketMessage.cs" />
+    <Compile Include="Model\ClientSocketModel.cs" />
+    <Compile Include="Model\GatewayPackets\BinaryStreamWriter.cs" />
+    <Compile Include="Model\GatewayPackets\GatewayPacketBody.cs" />
+    <Compile Include="Model\GatewayPackets\GatewayPacketHeader.cs" />
+    <Compile Include="Model\GatewayPackets\GatewayPacketMessage.cs" />
+    <Compile Include="Model\GatewayPackets\GatewayPacketType.cs" />
+    <Compile Include="Model\GatewayPackets\PacketTextEncoder.cs" />
+    <Compile Include="Model\MessageHandler.cs" />
+    <Compile Include="Model\NetWorkEnum.cs" />
+    <Compile Include="Model\NETWORK_PACKET_HEADER.cs" />
+    <Compile Include="Model\Config\GatewayConfig.cs" />
+    <Compile Include="Model\ServerSocketModel.cs" />
+    <Compile Include="Network\IClientMessage.cs" />
+    <Compile Include="Network\IGatewayListener.cs" />
+    <Compile Include="Network\IGatewayMessage.cs" />
+    <Compile Include="Network\MessageReceivedEventArgs.cs" />
+    <Compile Include="Network\Tcp\GatewayTcpListener.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\LinkNoTool.cs" />
+    <Compile Include="Tool\SystemConfigTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ClientPackets\ClientPacketBody.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
